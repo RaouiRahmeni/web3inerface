@@ -12,7 +12,6 @@ import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -41,44 +40,58 @@ export default function NavBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "" }}>
+    <AppBar
+      position="static"
+      sx={{
+        bgcolor: "white",
+        borderBottom: 1,
+        borderColor: "black",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            variant="h6"
+            variant="h7"
             noWrap
             component="div"
             sx={{
               m: 3,
-              p: 1,
+              p: 2,
               display: { xs: "none", md: "flex" },
-              bgcolor: "text.primary",
+              bgcolor: "#2D3648",
+              borderRadius: 2,
             }}
           >
             LOGO
           </Typography>
-          <FormControl>
-            <InputLabel id="demo-simple-select-label">Age</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={age}
-              label="Age"
-              onChange={handleChange}
-              maxWidth="xl"
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl
               sx={{
                 width: 300,
                 m: 3,
                 p: 1,
+                ml: 120,
                 display: { xs: "none", md: "flex" },
-                bgcolor: "info.main",
+                color: "white",
+                bgcolor: "#2D3648",
+                borderRadius: 2,
               }}
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </FormControl>
+              <InputLabel id="demo-simple-select-label">Age</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={age}
+                label="Age"
+                onChange={handleChange}
+                maxWidth="xl"
+              >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
